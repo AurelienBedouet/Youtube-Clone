@@ -26,7 +26,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          color: "#fff",
+          color: "#24262e",
         }}
       >
         <CardMedia
@@ -46,7 +46,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           {channelDetail?.snippet?.title}{" "}
           {channelDetail?.statistics?.subscriberCount > 100000 && (
             <CheckCircleIcon
-              sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
+              sx={{ fontSize: "14px", color: "#24262e", ml: "5px" }}
             />
           )}
         </Typography>

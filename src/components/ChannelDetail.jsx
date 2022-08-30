@@ -11,8 +11,6 @@ const ChannelDetail = () => {
 
   const { id } = useParams();
 
-  console.log(channelDetail);
-
   useEffect(() => {
     const fetchResults = async () => {
       fetchFromAPI(`channels?part=snippet&id=${id}`).then(data =>
@@ -39,7 +37,7 @@ const ChannelDetail = () => {
         />
         <ChannelCard channelDetail={channelDetail} marginTop="-100px" />
       </Box>
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: 2 }} className="container">
         <Videos videos={videos} />
       </Box>
     </Box>

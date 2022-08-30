@@ -17,11 +17,15 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack direction={{ md: "row" }}>
+    <Stack
+      direction={{ md: "row" }}
+      sx={{ mt: { xs: "24px", md: 0 } }}
+      className="container"
+    >
       <Box
         sx={{
-          borderRight: "1px solid #3d3d3d",
-          p: { sx: 0, md: "8px 32px 0 16px" },
+          borderRight: "1px solid #24262e",
+          p: { sx: 0, md: "32px 32px 0 0" },
         }}
       >
         <Sidebar
@@ -30,14 +34,14 @@ const Feed = () => {
         />
       </Box>
 
-      <Box p={2} ml={{ xs: 0, md: "48px" }} sx={{ overflowY: "auto" }}>
+      <Box py={4} pl={{ xs: 0, md: "48px" }} sx={{ overflowY: "auto" }}>
         <Typography
           variant="h4"
           fontWeight="bold"
           mb={4}
-          sx={{ color: "white" }}
+          sx={{ color: "#f70000" }}
         >
-          {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
+          {selectedCategory} <span style={{ color: "#000" }}>videos</span>
         </Typography>
 
         <Videos

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import { Typography, Box, Stack } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
 import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
@@ -31,16 +29,14 @@ const VideoDetail = () => {
 
   return (
     <Box minHeight="95vh">
-      <Stack direction={{ xs: "column", md: "row" }}>
-        <Box
-          flex={1}
-          p={{ xs: "8px 8px 0 8px", sm: "16px 16px 0 16px", md: "0 0 0 16px" }}
-        >
+      <Stack direction={{ xs: "column", md: "row" }} className="container">
+        <Box flex={1} pt={{ xs: "8px", sm: "16px", md: "0" }}>
           <Box
             sx={{
               width: "100%",
               position: "sticky",
-              top: "84px",
+              top: "88px",
+              right: { xs: "16px", md: 0 },
             }}
           >
             <ReactPlayer
@@ -49,29 +45,33 @@ const VideoDetail = () => {
               controls
             />
             <Typography
-              color="#fff"
+              color="#24262e"
               component="h5"
               fontSize={{ xs: "16px", sm: "18px", md: "20px", xl: "22px" }}
               fontWeight="bold"
               lineHeight={1.3}
               p={1}
-              mt={{ xl: 2 }}
+              mt={{ xs: 1, xl: 2 }}
             >
-              {title}
+              {title.slice(0, 100)}
+              {title.length > 100 ? "..." : ""}
             </Typography>
             <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              sx={{ color: "#fff" }}
+              sx={{ color: "#24262e" }}
               p={1}
             >
               <Link to={`/channel/${channelId}`}>
                 <Typography
                   fontSize={{ sm: "14px", md: "16px" }}
-                  color="#fff"
+                  color="#24262e"
                   display="flex"
                   alignItems="center"
+                  border="1px solid #24262e"
+                  borderRadius={1}
+                  p={1}
                 >
                   {channelTitle}
                 </Typography>
@@ -88,8 +88,8 @@ const VideoDetail = () => {
           </Box>
         </Box>
         <Box
-          p={2}
-          mt={{ xs: 8, md: 0 }}
+          px={{ xs: 0, md: 2 }}
+          mt={{ xs: 8, md: 4 }}
           justifyContent="center"
           alignItems="center"
         >
