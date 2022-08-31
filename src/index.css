@@ -8,14 +8,31 @@ body {
 :root {
   --primary-color: #f8f9fa;
   --secondary-color: #24262e;
-  --accent-color: #f70000;
+  --accent-color: linear-gradient(
+    90deg,
+    rgba(0, 238, 247, 1) 0%,
+    rgba(206, 3, 184, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 .container {
-  max-width: 1536px;
-  padding-inline: 10px;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 1536px !important;
+  padding-inline: 8px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding-inline: 4px !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    padding-inline: 16px !important;
+  }
 }
 
 a {
@@ -44,6 +61,13 @@ img {
   background-color: transparent;
 }
 
+.text-gradient {
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, rgba(206, 3, 184, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .logo {
   font-weight: 700 !important;
   color: #f8f9fa;
@@ -52,22 +76,31 @@ img {
   border-radius: 5px;
   padding: 4px 8px;
   transition: all 300ms ease;
+  cursor: pointer;
 }
 
 .logo:focus,
 .logo:hover {
-  border: 2px solid #f70000;
-  color: #f70000;
+  border: 2px solid rgba(0, 238, 247, 1);
+  color: rgba(0, 238, 247, 1);
 }
 
 .react-player {
   height: 75vh !important;
-  width: 97.5% !important;
+  width: 95% !important;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
   .react-player {
     height: 45vh !important;
+    width: 97.5% !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .react-player {
+    width: 100% !important;
   }
 }
 
@@ -88,7 +121,7 @@ img {
 }
 
 .category-btn:hover {
-  background-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
   color: #f8f9fa !important;
 }
 
@@ -112,8 +145,8 @@ img {
 }
 
 .show-more-btn {
-  color: #fff !important;
-  background-color: #f70000 !important;
+  color: var(--primary-color) !important;
+  background: var(--accent-color);
   transition: all 300ms ease-in;
 }
 

@@ -25,8 +25,8 @@ const SearchFeed = () => {
         m={"50px 0"}
         textAlign="center"
       >
-        Search Results for{" "}
-        <span style={{ color: "#F70000" }}>{searchTerm}</span> videos
+        Search Results for <span className="text-gradient">{searchTerm}</span>{" "}
+        videos
       </Typography>
       <Box display="flex">{<Videos videos={videos} />}</Box>
     </Box>

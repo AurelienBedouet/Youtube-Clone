@@ -3,15 +3,15 @@ import { Stack, Box, Button } from "@mui/material";
 import { ChannelCard, Loader, VideoCard } from "./";
 
 const Videos = ({ videos, direction, justifyContent }) => {
-  const [itemsToShow, setItemsToShow] = useState(25);
+  const [itemsToShow, setItemsToShow] = useState(24);
   const [expanded, setExpanded] = useState(false);
 
   const showMore = () => {
-    if (itemsToShow === 25) {
+    if (itemsToShow === 24) {
       setItemsToShow(videos.length);
       setExpanded(true);
     } else {
-      setItemsToShow(25);
+      setItemsToShow(24);
       setExpanded(false);
     }
   };

@@ -25,7 +25,7 @@ const SearchBar = () => {
         display: "flex",
         alignItems: "center",
         width: "400px",
-        mr: "16px",
+        mr: { xs: "16px", sm: "48px", md: "64px", lg: "80px" },
       }}
     >
       <InputBase
@@ -38,7 +38,7 @@ const SearchBar = () => {
       />
       <IconButton
         type="submit"
-        sx={{ px: "10px", color: "#f70000" }}
+        sx={{ px: "10px", color: "rgba(206, 3, 184, 1)" }}
         aria-label="search"
       >
         <SearchIcon />

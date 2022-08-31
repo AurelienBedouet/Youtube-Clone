@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Loader } from "./";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import sanitizeHtml from "sanitize-html";
 
@@ -17,8 +18,11 @@ const VideoCard = ({
     snippet,
   },
 }) => {
+  if (!snippet) return <Loader />;
+
   const dirty = `${snippet?.title.slice(0, 75)}`;
   const clean = sanitizeHtml(dirty);
+
   return (
     <Card
       className="video-card"

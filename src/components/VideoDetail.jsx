@@ -29,8 +29,12 @@ const VideoDetail = () => {
 
   return (
     <Box minHeight="95vh">
-      <Stack direction={{ xs: "column", md: "row" }} className="container">
-        <Box flex={1} pt={{ xs: "8px", sm: "16px", md: "0" }}>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        className="container"
+        px={{ xs: 0, md: "8px" }}
+      >
+        <Box flex={1} mt={{ xs: "32px", md: "0" }}>
           <Box
             sx={{
               width: "100%",
@@ -44,47 +48,54 @@ const VideoDetail = () => {
               className="react-player"
               controls
             />
-            <Typography
-              color="#24262e"
-              component="h5"
-              fontSize={{ xs: "16px", sm: "18px", md: "20px", xl: "22px" }}
-              fontWeight="bold"
-              lineHeight={1.3}
-              p={1}
-              mt={{ xs: 1, xl: 2 }}
+            <Box
+              sx={{
+                width: { xs: "97.5%", sm: "95%", md: "100%" },
+                m: "0 auto",
+              }}
             >
-              {title.slice(0, 100)}
-              {title.length > 100 ? "..." : ""}
-            </Typography>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              sx={{ color: "#24262e" }}
-              p={1}
-            >
-              <Link to={`/channel/${channelId}`}>
-                <Typography
-                  fontSize={{ sm: "14px", md: "16px" }}
-                  color="#24262e"
-                  display="flex"
-                  alignItems="center"
-                  border="1px solid #24262e"
-                  borderRadius={1}
-                  p={1}
-                >
-                  {channelTitle}
-                </Typography>
-              </Link>
-              <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(viewCount).toLocaleString()} views
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(likeCount).toLocaleString()} likes
-                </Typography>
+              <Typography
+                color="#24262e"
+                component="h5"
+                fontSize={{ xs: "16px", sm: "18px", md: "20px", xl: "22px" }}
+                fontWeight="bold"
+                lineHeight={1.3}
+                p={1}
+                mt={{ xs: 1, xl: 2 }}
+              >
+                {title.slice(0, 100)}
+                {title.length > 100 ? "..." : ""}
+              </Typography>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{ color: "#24262e" }}
+                p={1}
+              >
+                <Link to={`/channel/${channelId}`}>
+                  <Typography
+                    fontSize={{ xs: "13px", sm: "14px", md: "16px" }}
+                    color="#24262e"
+                    display="flex"
+                    alignItems="center"
+                    border="1px solid #24262e"
+                    borderRadius={1}
+                    p={1}
+                  >
+                    {channelTitle}
+                  </Typography>
+                </Link>
+                <Stack direction="row" gap="20px" alignItems="center">
+                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                    {parseInt(viewCount).toLocaleString()} views
+                  </Typography>
+                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                    {parseInt(likeCount).toLocaleString()} likes
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
+            </Box>
           </Box>
         </Box>
         <Box

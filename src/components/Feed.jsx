@@ -17,39 +17,37 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack
-      direction={{ md: "row" }}
-      sx={{ mt: { xs: "24px", md: 0 } }}
-      className="container"
-    >
-      <Box
-        sx={{
-          borderRight: "1px solid #24262e",
-          p: { sx: 0, md: "32px 32px 0 0" },
-        }}
-      >
-        <Sidebar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-      </Box>
-
-      <Box py={4} pl={{ xs: 0, md: "48px" }} sx={{ overflowY: "auto" }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={4}
-          sx={{ color: "#f70000" }}
+    <Box className="container">
+      <Stack direction={{ md: "row" }} sx={{ mt: { xs: "24px", md: 0 } }}>
+        <Box
+          sx={{
+            borderRight: "1px solid #24262e",
+            p: { sx: 0, md: "32px 32px 0 0" },
+          }}
         >
-          {selectedCategory} <span style={{ color: "#000" }}>videos</span>
-        </Typography>
+          <Sidebar
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </Box>
 
-        <Videos
-          videos={videos}
-          justifyContent={{ xs: "center", md: "start" }}
-        />
-      </Box>
-    </Stack>
+        <Box
+          py={4}
+          pl={{ xs: 0, md: "48px" }}
+          sx={{ overflowY: "auto", textAlign: { xs: "center", md: "start" } }}
+        >
+          <Typography variant="h4" fontWeight="bold" mb={4}>
+            <span className="text-gradient">{selectedCategory}</span>{" "}
+            <span style={{ color: "#24262e" }}>videos</span>
+          </Typography>
+
+          <Videos
+            videos={videos}
+            justifyContent={{ xs: "center", md: "start" }}
+          />
+        </Box>
+      </Stack>
+    </Box>
   );
 };
 
